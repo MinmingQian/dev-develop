@@ -59,7 +59,7 @@ class DepartmentsController extends Controller
             abort(404);
 
 
-        return view('departments.dp_show', compact('department'));
+        return view('departments.dp_detail', compact('department'));
     }
 
     /**
