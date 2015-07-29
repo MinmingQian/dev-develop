@@ -16,8 +16,11 @@ class CreateDepartmentsTable extends Migration {
 		{
 			$table->increments('id', true);
 			$table->integer('user_id')->default(0);
-			$table->string('department_size', 128);
-			$table->string('department_description', 128);
+			$table->string('name',128);
+			$table->integer('size');
+			$table->string('address', 196);
+			$table->string('description', 256);
+			$table->integer('level')->default(1);
 			$table->float('location_x', 10, 0)->default(0);
 			$table->float('location_y', 10, 0)->default(0);
 			$table->integer('min_rent_time')->default(0);

@@ -18,3 +18,7 @@ Route::get('/', function () {
 
 Route::get('departments', 'DepartmentsController@index');
 Route::get('departments/{id}', 'DepartmentsController@show');
+
+
+
+Route::get('rooms', 'RoomsController@index');

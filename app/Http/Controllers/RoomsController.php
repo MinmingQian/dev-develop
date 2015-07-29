@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class RoomsController extends Controller
 {
@@ -17,6 +19,10 @@ class RoomsController extends Controller
     public function index()
     {
         //
+        //$rooms = DB::table('rooms')->where('department_id', '=', 1);
+        $rooms = Room::where('department_id', '=', 1)->get();
+
+        return view('rooms.rm_index', compact('rooms'));
     }
 
     /**

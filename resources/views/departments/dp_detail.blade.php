@@ -185,13 +185,11 @@
 </div><!-- End Carousel -->
 
 
-
-
 <div class="row detail-sec" >
   <div class="col-md-9">
     <div class="house-head">
-      <div class="detail-hs-name">浦东新区 - 世纪锦城 - 朝南 -10m</div>
-      <div class="detail-hs-des"> <i class="fa fa-map-marker"></i> 杭州市萧山区北干街道白马公寓XX幢202 &nbsp &nbsp &nbsp 整套 | 5层 | 朝南</div>
+      <div class="detail-hs-name">{{$department->description}}</div>
+      <div class="detail-hs-des"> <i class="fa fa-map-marker"></i> {{$department->address}}</div>
     </div>
 
 
@@ -220,8 +218,8 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th class="col-md-3 text-align house-des"><i class="fa fa-th fa-4x"></i> <p>128m2</p></th>
-          <th class="col-md-3 text-align house-des"><i class="fa fa-building-o fa-4x"></i> <p>5楼</p></th>
+          <th class="col-md-3 text-align house-des"><i class="fa fa-th fa-4x"></i> <p>{{$department->size}}m2</p></th>
+          <th class="col-md-3 text-align house-des"><i class="fa fa-building-o fa-4x"></i> <p>{{$department->level}}楼</p></th>
           <th class="col-md-3 text-align house-des"><i class="fa fa-bed fa-4x"></i> <p>3室2卫</p></th>
           <th class="col-md-3 text-align house-des"><i class="fa fa-subway fa-4x"></i> <p>地铁沿线</p></th>
         </tr>
@@ -261,42 +259,18 @@
       </thead>
 
 
-      <tr>
-        <td class="text-align">主卧</td>
-        <td class="text-align">23m</td>
-        <td class="text-align">南</td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-      </tr>
+        @foreach($rooms as $room)
+            <tr>
+                <td class="text-align">{{ $room->name }}</td>
+                <td class="text-align">{{$room->size}}m2</td>
+                <td class="text-align">南</td>
+                <td class="text-align"> @if($room->tv) <i class="fa fa-check"></i> @else <i class="fa fa-circle-thin"></i> @endif </td>
+                <td class="text-align"> @if($room->air_condition) <i class="fa fa-check"></i> @else <i class="fa fa-circle-thin"></i> @endif </td>
+                <td class="text-align"> @if($room->toilet) <i class="fa fa-check"></i> @else <i class="fa fa-circle-thin"></i> @endif </td>
+            </tr>
+        @endforeach
 
-      <tr>
-        <td class="text-align">次卧</td>
-        <td class="text-align">18m</td>
-        <td class="text-align">南</td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-circle-thin"></i></td>
-      </tr>
-
-      <tr>
-        <td class="text-align">小房间</td>
-        <td class="text-align">18m</td>
-        <td class="text-align">北</td>
-        <td class="text-align"><i class="fa fa-circle-thin"></i></td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-circle-thin"></i></td>
-      </tr>
-
-      <tr>
-        <td class="text-align">客厅</td>
-        <td class="text-align">29m</td>
-        <td class="text-align">-</td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-check"></i></td>
-        <td class="text-align"><i class="fa fa-circle-thin"></i></i></td>
-      </tr>
-    </table> 
+    </table>
   </div>
 </div> <!-- room description row-->
 
@@ -306,17 +280,7 @@
 <div class="row detail-sec">
   <div class="col-md-9">
     <div class="detail-sec-head"><i class="fa fa-play"></i><span>&nbsp入住贴士</span></div>
-    
-    <ul>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-      <li>环球翡翠湾花园位于环球翡翠湾花园近杨高南路，建成于2006年，生活娱乐设施齐全</li>
-    </ul>
-
+        {{ $department->introduction }}
     <hr class="featurette-divider">
   </div>
 </div>
@@ -343,9 +307,9 @@
 </div>
   
 
-
-
-
+    @foreach($guesses as $guess)
+        <p>{{ $guess }}</p>
+    @endforeach
 
 
 

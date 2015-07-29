@@ -5,9 +5,9 @@
 
     <hr>
 
-    @foreach($departments as $department)
+    @foreach($rooms as $room)
         <article>
-            {{$department}}
+            {{$room}}
         </article>
     @endforeach
 

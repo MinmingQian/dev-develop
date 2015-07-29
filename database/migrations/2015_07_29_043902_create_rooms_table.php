@@ -16,7 +16,9 @@ class CreateRoomsTable extends Migration {
 		{
 			$table->increments('id', true);
 			$table->integer('department_id');
-			$table->string('room_name', 16);
+			$table->string('name', 32);
+			$table->string('orientation',32);
+			$table->integer('size')->default(0);
 			$table->char('air_condition');
 			$table->char('tv');
 			$table->char('toilet');
