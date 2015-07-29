@@ -151,8 +151,6 @@ return [
          */
         Bestmomo\Scafold\ScafoldServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        'Way\Generators\GeneratorsServiceProvider',
-        'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
     ],
 
     /*

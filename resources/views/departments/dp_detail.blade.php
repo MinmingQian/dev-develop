@@ -208,8 +208,8 @@
 
       <tr>
         <td class="text-align"><span class="vert-align">押一付三</span></td>
-        <td class="text-align"><span class="vert-align ori-price"> 2000元/月</span></td>
-        <td class="text-align"><span class="special-price">{{ $department->price }}</span><span clas="vert-align">元/月 <span class="discount">&nbsp 9折 &nbsp</span></span> </td>
+        <td class="text-align"><span class="vert-align ori-price"> {{ $department->price }}元/月</span></td>
+        <td class="text-align"><span class="special-price">{{ $department->price * 0.9 }}</span><span clas="vert-align">元/月 <span class="discount">&nbsp 9折 &nbsp</span></span> </td>
         <td class="text-align"><span class="vert-align">100元/月</span></td>
       </tr>
 
