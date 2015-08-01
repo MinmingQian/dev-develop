@@ -29,6 +29,7 @@ class CreateApartmentsTable extends Migration {
 			$table->double('discount')->default(9);
 			$table->string('introduction', 1024)->nullable();
 			$table->boolean('enable', 1);
+			$table->string('pic', 128)->nullable();
 			$table->timestamps();
 		});
 
