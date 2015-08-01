@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration {
 			$table->increments('id', true);
 			$table->integer('buyer_id');
 			$table->integer('seller_id');
-			$table->integer('department_id');
+			$table->integer('apartment_id');
 			$table->integer('room_id')->nullable();
 			$table->integer('price')->nullable();
 			$table->integer('months')->default(0);

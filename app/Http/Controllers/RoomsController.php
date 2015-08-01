@@ -19,8 +19,8 @@ class RoomsController extends Controller
     public function index()
     {
         //
-        //$rooms = DB::table('rooms')->where('department_id', '=', 1);
-        $rooms = Room::where('department_id', '=', 1)->get();
+        //$rooms = DB::table('rooms')->where('apartment_id', '=', 1);
+        $rooms = Room::where('apartment_id', '=', 1)->get();
 
         return view('rooms.rm_index', compact('rooms'));
     }

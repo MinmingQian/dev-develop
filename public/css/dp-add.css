@@ -1,0 +1,32 @@
+.addstyle > tbody > tr > td {
+    padding: 2%;
+}
+.addstyle label{
+    float: right;
+    white-space: nowrap;
+}
+
+.addstyle input[type="radio"]{
+    margin-left: 2%;
+}
+
+.addstyle input{
+    border-radius: 0px;
+}
+
+.addstyle a{
+    border-radius: 0px;
+}
+
+.addstyle button{
+    border-radius: 0px;
+}
+
+.addstyle label{
+    font-weight: 100;
+}
+
+
+.addstyle{
+        background-color: white;
+}

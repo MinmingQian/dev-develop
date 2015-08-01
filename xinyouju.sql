@@ -16,10 +16,10 @@ Date: 2015-07-19 22:32:20
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for departmentinfo
+-- Table structure for apartmentinfo
 -- ----------------------------
-DROP TABLE IF EXISTS `departmentinfo`;
-CREATE TABLE `departmentinfo` (
+DROP TABLE IF EXISTS `apartmentinfo`;
+CREATE TABLE `apartmentinfo` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` int(11) NOT NULL DEFAULT '0',
   `DepartmentAreaInfo` varchar(128) NOT NULL COMMENT '小区信息',

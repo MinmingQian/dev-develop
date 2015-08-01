@@ -90,7 +90,80 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'roomname'  => [
+            'required' => '请填写房间名称',
+            'max:32'    => '房间名称太长请修改',
+        ],
+        'roomsize'  => [
+            'required' => '请填写房间面积',
+            'integer' => '房间面积请填写整数',
+        ],
+        'roomori'  => [
+            'required' => '请填写房间朝向',
+        ],
+        'roomac'  => [
+            'required' => '请选择房间是否有空调',
+        ],
+        'roomtv'  => [
+            'required' => '请选择房间是否有电视',
+        ],
+        'roomtoilet'  => [
+            'required' => '请选择房间是否有厕所',
+        ],
+        'roomkit'  => [
+            'required' => '请选择房间是否有厨房',
+        ],
+        'roomimg'  => [
+            'required' => '请上传房间照片',
+            'mimes:jpeg,bmp,png' => '房间照片类型只支持jpeg,bmp和png',
+        ],
+        'roomrenttime'  => [
+            'required' => '请填写房间出租时间',
+        ],
+
+
+        'depname'   => [
+            'required' => '请填写公寓名称',
+            'max:255'  => '公寓名称太长请修改',
+        ],
+        'depsize'   => [
+            'required'  => '请填写公寓面积',
+            'integer'   => '公寓面积请填写整数',
+        ],
+        'depadd'    => [
+            'required'  => '请填写公寓地址',
+            'max:196'   => '公寓地址太长请修改',
+        ],
+        'depdes'    => [
+            'required'  => '请填写公寓描述',
+            'max:256'   => '公寓描述太长请修改',
+        ],
+        'deplevel'  => [
+            'required' => '请填写公寓楼层',
+            'integer'   => '楼层请填写整数',
+        ],
+        'deprenttime'  => [
+            'required' => '请填写公寓出租时间',
+        ],
+        'depdeposit'  => [
+            'required' => '请填写公寓出租押金',
+            'integer'   => '公寓出租押金请填写整数',
+        ],
+        'depprice'  => [
+            'required' => '请填写公寓租金',
+            'integer'   => '公寓租金请填写整数',
+        ],
+        'depintro'  => [
+            'required' => '请填写公寓简介',
+            'max:1024' => '公寓简介太长请修改',
+        ],
+        'deppic'  => [
+            'required' => '请上传公寓照片',
+            'mimes:jpeg,bmp,png' => '公寓照片类型只支持jpeg,bmp和png',
+        ],
+
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -104,5 +177,9 @@ return [
     */
 
     'attributes' => [],
+
+//    myvalidation
+
+
 
 ];

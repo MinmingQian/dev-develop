@@ -84,4 +84,13 @@ class OrdersController extends Controller
     {
         //
     }
+
+
+	/*
+	 *
+	 */
+	public function payment()
+	{
+		return view('orders.payment');
+	}
 }

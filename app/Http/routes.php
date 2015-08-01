@@ -12,13 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
-Route::get('departments', 'DepartmentsController@index');
-Route::get('departments/{id}', 'DepartmentsController@show');
+/** added by joe for apartment add fuction */
+Route::post('apartments/submit', 'ApartmentsController@store');
+Route::get('apartments/add','ApartmentsController@create');
 
 
 
+
+Route::get('apartments/{id}', 'ApartmentsController@show');
+
+Route::get('search', 'ApartmentsController@search');
 Route::get('rooms', 'RoomsController@index');
+Route::get('payment', 'OrdersController@payment');
+Route::get('profile', 'UsersController@profile');
+
+
+/* other functions */
+Route::get('holder', function() {return view('layouts.holder');});
+Route::get('online', function() {return view('layouts.online');});
+Route::get('roommate', function() {return view('layouts.roommate');});
+Route::get('about', function() {return view('layouts.about');});
+

@@ -15,14 +15,14 @@ class CreateRoomsTable extends Migration {
 		Schema::create('rooms', function(Blueprint $table)
 		{
 			$table->increments('id', true);
-			$table->integer('department_id');
+			$table->integer('apartment_id');
 			$table->string('name', 32);
 			$table->string('orientation',32);
 			$table->integer('size')->default(0);
-			$table->char('air_condition');
-			$table->char('tv');
-			$table->char('toilet');
-			$table->char('kitchen')->nullable()->default(0);
+			$table->boolean('air_condition',1);
+			$table->boolean('tv',1);
+			$table->boolean('toilet',1);
+			$table->boolean('kitchen',1);
 			$table->string('room_pic', 128)->nullable();
 			$table->integer('price');
 			$table->integer('deposit');
@@ -32,7 +32,7 @@ class CreateRoomsTable extends Migration {
 
 		});
 
-		DB::unprepared('ALTER TABLE `rooms` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `department_id` )');
+		DB::unprepared('ALTER TABLE `rooms` DROP PRIMARY KEY, ADD PRIMARY KEY (  `id` ,  `apartment_id` )');
 	}
 
 
