@@ -1,9 +1,15 @@
 @extends('layouts.default')
 
+
+@section('title')
+    心有居
+@endsection
+
+
 @section('content')
 
 
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top: 50px;">
     <!-- 相册 -->
     <div id="carousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -42,50 +48,54 @@
     </div>
   </div>
 
-  <!-- 搜索栏 -->
-  <div class="col-md-12 home-search-container">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 home-search-title-container">
-      <div class="col-md-2">
-        <div class="row home-search-city"><i class="fa fa-map-marker fa-2x"></i><span>杭州市萧山区</span></div>
-        <div class="row home-search-chgcity">切换城市</div>
-      </div>
-      <div class="col-md-10 home-search-btn-container">
-        <form method="GET" action="{{url('/search')}}">
-          <div class="input-group">
-            <input name="searchString" type="text" class="form-control" placeholder="搜索你想住的区域">
+  <!-- 主页模块1 -->
+  <div class="row">
+
+    <!-- 搜索栏 -->
+    <div class="row home-search-container">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 home-search-title-container">
+        <div class="col-md-2">
+          <div class="row home-search-city"><i class="fa fa-map-marker fa-2x"></i><span>杭州市萧山区</span></div>
+          <div class="row home-search-chgcity">切换城市</div>
+        </div>
+        <div class="col-md-10 home-search-btn-container">
+          <form method="GET" action="{{url('/search')}}">
+            <div class="input-group">
+              <input name="searchString" type="text" class="form-control" placeholder="搜索你想住的区域">
               <span class="input-group-btn">
                   <button class="btn btn-danger home-search-button" type="submit">搜索</button>
               </span>
-          </div><!-- /input-group -->
-        </form>
+            </div><!-- /input-group -->
+          </form>
+        </div>
       </div>
+      <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
   </div>
-
-  <!-- 主页模块1 -->
-  <div class="col-md-12 home-block-one">
-    <div class="row">
-      <span class="block-maintitle">你每天与时间赛跑</span>
-    </div>
-    <div class="row" style="margin-top: 0.5%;">
-      <span class="block-maintitle">或许，本就不该如此操劳</span>
-    </div>
-    <div class="row" style="margin-top: 1.5%;">
-      <span class="block-subtitle">我们为你提供一站式的租房服务，让你在忙碌了一天后不必再为租房而奔波</span>
-    </div>
-    <div class="col-sm-12 block-one-bimg">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <img src="images/zhuf_r1_c1.png" style="width:100%;" />
+    <div class="row" style="text-align: left; padding-top: 8%;">
+      <div class="col-xs-2"> </div>
+      <div class="col-xs-10">
+        <span class="block-maintitle" style="font-size: 60px; line-height: 80px;">{{\App\Models\Message::find(1)->title}}</span>
       </div>
-      <div class="col-sm-1"></div>
     </div>
+
+    <div class="row" style="text-align: left; padding-bottom: 100px;" >
+      <div class="col-xs-2"> </div>
+      <div class="col-xs-10">
+        <span class="block-subtitle" style="font-size: 60px; line-height: 80px;">{{\App\Models\Message::find(1)->subtitle}}</span>
+      </div>
+    </div>
+
+
+
+
+  <div class="row" style=" background-color: #fafafa; padding-top: 50px;">
     <div class="row">
-      <div class="col-xs-12" style="margin-top: 0.5%;">
+      <div class="col-xs-12" style="margin-top: 1%;">
         <div class="col-xs-1"></div>
         <div class="col-xs-10 home-blkone-fimg-container">
+          <div class="row">
           <div class="col-xs-3">
             <img src="images/zhuf_r3_c1.png" class="img-responsive" style="padding:0px;" />
           </div>
@@ -96,29 +106,17 @@
             <img src="images/zhuf_r3_c5.png" class="img-responsive" style="padding:0px;" />
           </div>
           <div class="col-xs-3">
-            <img src="images/zhuf_r3_c7.jpg" class="img-responsive" style="padding:0px;" />
+            <img src="images/zhuf_r3_c7.png" class="img-responsive" style="padding:0px;" />
+          </div>
           </div>
         </div>
         <div class="col-xs-1"></div>
       </div>
     </div>
-  </div>
 
-  <!-- 主页模块2 -->
-  <div class="col-md-12 home-block-two">
-    <div class="row">
-      <span class="block-maintitle">我们为你推荐</span>
+    <div class="row" style="font-size: 40px; color: black; text-align: center; font-weight: bold; padding-bottom: 20px;">
+      <span> 心有居推出精品房源</span>
     </div>
-    <div class="row" style="margin-top: 1.5%;">
-      <span class="block-subtitle">总有个声音告诉自己，无论工作多幸苦，莫忘初心——对家的美好追求，是我对生活方式的选择</span>
-    </div>
-
-    <div class="row" style="text-align: center;">
-      <a class="btn btn-danger home-block-two-refbtn" href="#" onclick="">
-        <i class="fa fa-refresh fa-lg"></i> 换一组
-      </a>
-    </div>
-
 
     <div id="randomShow" class="col-sm-12" style="padding:0px;">
       <div id="owl-demo" class="owl-carousel owl-theme">
@@ -158,35 +156,68 @@
         @endforeach
       </div>
     </div>
+  </div>
+
+
+
+  <div class="row" style="padding: 100px 0 50px;">
+    <div class="row" style="text-align: left;">
+      <div class="col-xs-2"> </div>
+      <div class="col-xs-10">
+        <span class="block-maintitle" style="font-size: 40px; line-height: 80px;">{{\App\Models\Message::find(2)->title}}</span>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: left; padding-bottom: 100px;" >
+      <div class="col-xs-2"> </div>
+      <div class="col-xs-10">
+        <span class="block-subtitle" style="font-size: 40px; line-height: 80px;">{{\App\Models\Message::find(2)->title}}</span>
+      </div>
+    </div>
 
   </div>
 
-  <!-- 主页模块3 -->
-  <div class="col-sm-12 home-block-three">
-    <div class="row home-block-tt-container">
-      <span class="block-maintitle">客户之声</span>
-    </div>
-    <div class="col-sm-12">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <div class="row">
-          <div class="col-sm-6">
-            <img src="images/rent2_r1_c1.png" style="width:100%;" />
-          </div>
-          <div class="col-sm-6">
-            <img src="images/rent2_r1_c3.png" style="width:100%;" />
-          </div>
-        </div>
-        <div class="row" style="padding-top: 3%;margin-bottom: 10%;">
-          <div class="col-sm-6">
-            <img src="images/rent2_r3_c1.png" style="width:100%;" />
-          </div>
-          <div class="col-sm-6">
-            <img src="images/rent2_r3_c3.png" style="width:100%;" />
-          </div>
-        </div>
+
+
+  <!-- for video -->
+  <div class="row  home-block-two">
+    <div class="row block-one-bimg">
+      <div class="col-sm-12">
+        <img src="images/zhuf_r1_c1.png" style="width:100%;" />
       </div>
-      <div class="col-sm-1"></div>
+    </div>
+  </div>
+
+  <!-- 主页模块3 -->
+  <div class="row home-block-three" style="color: #FFFFFF; !important; background-color: #B9374A; padding: 100px 0px 100px;">
+    <div class="row" style="padding: 40px 0px 20px;">
+      <span class="block-maintitle" style="font-size: 2em; font-weight: bold; color: #FFFFFF;">从此，心有所居</span>
+    </div>
+
+    <div class="row" style="padding: 20px 0px 20px 0px;">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row"></div>
+      @foreach(\App\Models\Clientcomment::all()->take(3)->all() as $comment)
+        <div class="col-sm-4 client-comments" style="padding-left: 30px; padding-right: 30px;">
+          <div class="client-coment">
+            <span style="font-size: 1.5em;">
+              <i class="fa fa-quote-left fa-6" ></i>
+            </span>
+              <span style="font-size: 1.2em;">
+                {{ $comment->comment }}
+              </span>
+            <span style="font-size: 1.5em;">
+              <i class="fa fa-quote-right fa-6"></i>
+            </span>
+          </div>
+          <div style="padding-top: 20px; padding-bottom: 40px; font-size: 1.3em; font-weight: bold;">
+            {{ $comment->clientname }}
+          </div>
+        </div>
+      @endforeach
+      </div>
+      <div class="col-md-1"></div>
     </div>
   </div>
 

@@ -12,7 +12,7 @@
       <data directive="@each" injection="true" prefix="&lt;?php echo $__env-&gt;renderEach(" suffix="); ?&gt;" />
       <data directive="@endforeach" />
       <data directive="@yield" injection="true" prefix="&lt;?php echo $__env-&gt;yieldContent(" suffix="); ?&gt;" />
-      <data directive="@lang" injection="true" prefix="&lt;?php echo \Illuminate\Support\Facades\Lang::get(" suffix="); ?&gt;" />
+      <data directive="@lang" injection="true" prefix="&lt;?php echo \Illuminate\Support\Facades\Lang::get(" suffix="'); ?&gt;" />
       <data directive="@else" />
       <data directive="@unless" injection="true" prefix="&lt;?php if ( ! (" suffix=")): ?&gt;" />
       <data directive="@append" />

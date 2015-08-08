@@ -1,16 +1,40 @@
 /*
 导航栏
 */
-
+.home-nav{
+    -webkit-box-shadow: 0px 4px 22px 0px rgba(138,40,55,1);
+    -moz-box-shadow: 0px 4px 22px 0px rgba(138,40,55,1);
+    box-shadow: 0px 4px 22px 0px rgba(138,40,55,1);
+    padding-top: 0.5% !important;
+    padding-bottom: 0.5% !important;
+}
+.home-brand{
+    color: #ffffff !important;
+}
+.home-log-btn{
+    color: #ffffff !important;
+    transition: color 0.5s ease;
+}
+.home-log-btn:hover{
+    color: #80F6ED !important;
+}
+.home-reg-btn{
+    color: #ffffff !important;
+    transition: color 0.5s ease;
+}
+.home-reg-btn:hover{
+    color: #80F6ED !important;
+}
 .home-collapse-item {
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
-    color: #333333;
+    color: white !important;
     line-height: 25px;
     font-size: 14px;
+    transition: color 0.5s ease;
 }
 
 .home-collapse-item:hover {
-    color: #80F6ED;
+    color: #80F6ED !important;
 }
 
 .home-login-item {
@@ -100,7 +124,7 @@
 }
 
 .home-foot-link {
-    color: #6A6A6B;
+    color: white;
     margin-top: 0.3%;
     text-align: center;
     font-size: 12px;
@@ -108,7 +132,7 @@
 
 .home-foot-link > a {
     transition: color 0.5s ease;
-    color: #6A6A6B;
+    color: white;
     text-decoration: none;
     font-size: 12px;
 }
@@ -120,7 +144,7 @@
 .home-foot-cpright {
     margin-top: 0.4%;
     text-align: center;
-    color: #6A6A6B;
+    color: white;
     font-size: 10px;
 }
 
@@ -131,7 +155,7 @@
 
 .home-search-container {
     text-align: center;
-    background-color: #464646;
+    background-color: #B23446;
 }
 
 .home-search-city {
@@ -166,6 +190,7 @@
 .home-search-btn-container {
     line-height: 53px;
     vertical-align: middle;
+    padding-top: 1.4%;
 }
 
 .home-search-btn-container > .input-group > .form-control {
@@ -272,7 +297,7 @@
 
 
 /*
-*   Owl Carousel Owl Demo Theme 
+*   Owl Carousel Owl Demo Theme
 * v1.23
 */
 
@@ -397,7 +422,7 @@
     -o-transition: all 300ms ease-out;
     -ms-transition: all 300ms ease-out;
     transition: all 300ms ease-out;
-    background-color: black;
+    /*background-color: white;*/
     position: absolute;
     top: 0;
     bottom: 0;
@@ -408,8 +433,8 @@
     font-size: 20px;
     color: #00FCEF;
     text-align: center;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-    opacity: .5;
+    /*text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);*/
+    opacity: 0;
     line-height: 400px;
     vertical-align: 50%;
     filter: alpha(opacity=70)
@@ -417,7 +442,7 @@
 
 .owl-theme .owl-controls .owl-buttons .owl-prev:hover {
     opacity: .5;
-    background-color: #FF4B4B;
+    background-color: #C9717E;
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-next {
@@ -439,7 +464,7 @@
     color: #00FCEF;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-    opacity: .5;
+    opacity: 0;
     line-height: 400px;
     vertical-align: 50%;
     filter: alpha(opacity=70)
@@ -447,7 +472,7 @@
 
 .owl-theme .owl-controls .owl-buttons .owl-next:hover {
     opacity: .75;
-    background-color: #FF4B4B;
+    background-color: #C9717E;
 }
 
 #owl-demo .owl-item > div img {

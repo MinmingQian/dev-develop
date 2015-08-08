@@ -660,3 +660,11 @@ a{
 #owl-demo .owl-item > div img {
     height: 180px !important;
 }
+
+
+
+
+/* change the font-size of the header titles */
+#navbar .home-collapse-item {
+    font-size: 17px;
+}

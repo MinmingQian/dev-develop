@@ -57,8 +57,8 @@ $(function() {
             autoWidth:true,
             items: 4,
             navigationText: [
-                "<i class='fa fa-angle-left fa-5x'></i>",
-                "<i class='fa fa-angle-right fa-5x'></i>"
+                "<i class='fa fa-angle-left fa-5x' style='line-height: 350px;vertical-align: middle;'></i>",
+                "<i class='fa fa-angle-right fa-5x' style='line-height: 350px;vertical-align: middle;'></i>"
             ],
             afterAction: function(){
                 if ( this.itemsAmount > this.visibleItems.length ) {

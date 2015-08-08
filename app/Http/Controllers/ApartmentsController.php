@@ -40,7 +40,13 @@ class ApartmentsController extends Controller
      */
     public function create()
     {
-		return view('apartments.dp_add');
+        if (Auth::check())
+        {
+            return view('apartments.dp_add');
+        } else
+        {
+            return redirect()->guest('auth/login');
+        }
     }
 
     /**
@@ -154,7 +160,7 @@ class ApartmentsController extends Controller
                 }
             }
 
-			return redirect('apartments/'.$apartment->id);
+			return view('apartments.dp_check');
         }
 
     }

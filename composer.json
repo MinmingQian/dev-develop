@@ -10,7 +10,8 @@
         "bestmomo/scafold": "dev-master",
         "barryvdh/laravel-ide-helper": "^2.0",
         "spatie/searchindex": "^2.0",
-        "illuminate/html": "~5.0"
+        "illuminate/html": "~5.0",
+        "overtrue/laravel-lang": "1.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -50,6 +51,7 @@
         ],
         "post-update-cmd": [
         "php artisan clear-compiled",
+        "php artisan ide-helper:generate",
         "php artisan optimize"
         ]
     },

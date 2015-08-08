@@ -1,37 +1,17 @@
-@extends('layouts.default')
+@extends('layouts.searchbar')
+
+@section('page_title')
+    心有所居|房源搜索
+@endsection
 
 @section('title', $searchString)
 
-@section('content')
-<div class="container" style="margin-top: 53px;">
-  <div class="detail_search" >
-    <!-- 搜索栏 -->
-    <div class="col-md-12 home-search-container">
-      <div class="col-md-12 home-search-title-container">
-        <div class="col-md-2">
-          <div class="row home-search-city"><i class="fa fa-map-marker fa-2x"></i><span>杭州市萧山区</span></div>
-          <div class="row home-search-chgcity">切换城市</div>
-        </div>
-        <div class="col-md-10 home-search-btn-container">
-          <form method="GET" action="{{url('/search')}}">
-            <div class="input-group">
-              <input name="searchString" type="text" class="form-control" placeholder="搜索你想住的区域">
-              <span class="input-group-btn">
-                  <button class="btn btn-danger home-search-button" type="submit">搜索</button>
-              </span>
-            </div><!-- /input-group -->
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+@section('page_content')
 @if($apartments->count() == 0)
   <div class="container" style="text-align: center">
   <img src="{{ asset('images/nosearch.png') }}" alt="">
     </div>
-  @else
+@else
 <div class="container">
   @foreach(array_chunk($apartments->all(), 4) as $row)
     <div class="row" style="padding-top:10px; padding-bottom: 10px;;">
