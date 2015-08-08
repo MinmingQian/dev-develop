@@ -18,7 +18,7 @@
       @foreach($row as $apartment)
         <div class="col-sm-3 apartment-item">
           <article class="box style">
-            <a href="{{url('/apartments/'.$apartment->id)}}" class="image featured"><img src="{{ asset('img/house_example.png') }}" alt=""></a>
+            <a href="{{url('/apartments/'.$apartment->id)}}" class="image featured" style="overflow: hidden;"><img src="{{ $apartment->pic }}" alt=""></a>
             <div class="see-title">{{$apartment->name}}</div>
             <div class="see-des">{{$apartment->description}}</div>
 

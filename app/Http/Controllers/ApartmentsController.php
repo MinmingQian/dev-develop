@@ -241,17 +241,21 @@ class ApartmentsController extends Controller
 	 */
 	public function search()
 	{
-		$ss = Input::get("searchString");
 
-		$apartments = Apartment::where("name","like", "%".$ss."%")
-			->orWhere("description","like", "%".$ss."%")
-			->orWhere("address","like", "%".$ss."%")
-			->orWhere("introduction","like", "%".$ss."%")
-			->get();
+
+		$apartments = Apartment::where("enable",1)
+            ->where(function($query)
+            {
+                $query->where("name","like", "%".Input::get("searchString")."%")
+                    ->orWhere("description","like", "%".Input::get("searchString")."%")
+                    ->orWhere("address","like", "%".Input::get("searchString")."%")
+                    ->orWhere("introduction","like", "%".Input::get("searchString")."%");
+            })
+            ->get();
 
 		return view('apartments.dp_search')->with( array(
 				'apartments' => $apartments,
-				'searchString' => $ss,
+				'searchString' => Input::get("searchString"),
 			)
 		);
 	}

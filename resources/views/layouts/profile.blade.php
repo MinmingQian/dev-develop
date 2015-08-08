@@ -44,6 +44,7 @@
                 <th>#</th>
                 <th>订单号</th>
                 <th>价格</th>
+                <th>付款</th>
               </tr>
               </thead>
               <tbody id="items">
@@ -52,6 +53,7 @@
                 <td>{{$index + 1}}</td>
                 <td>{{$order->id}}</td>
                 <td>{{$order->price}}</td>
+                <td><button type="button" class="btn btn-default" onclick="location.href='{{url('/payment')}}'">去付款</button></td>
               </tr>
               @endforeach
               </tbody>

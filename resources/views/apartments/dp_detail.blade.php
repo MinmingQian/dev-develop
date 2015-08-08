@@ -177,7 +177,7 @@
             @foreach($guesses as $guess)
                 <div class="col-sm-3 guess-item">
                     <article class="box style">
-                        <a href="" class="image featured"><img src="{{ $guess->pic }}" alt=""></a>
+                        <a href="" class="image featured" style="overflow: hidden;"><img src="{{ $guess->pic }}" alt=""></a>
                         <div class="see-title">{{$guess->name}}</div>
                         <div class="see-des">{{$guess->description}}</div>
 
@@ -208,8 +208,13 @@
         map.addControl(new BMap.NavigationControl());
         map.addControl(new BMap.ScaleControl());
         map.enableScrollWheelZoom();
-        var lng ="120.1784435";
-        var lat ="30.1784435";
+        @if($apartment->location_x == 0 && $apartment->location_y == 0)
+            var lng ="120.1784435";
+            var lat ="30.1784435";
+        @else
+            var lng ="{{$apartment->location_x}}";
+            var lat ="{{$apartment->location_y}}";
+        @endif
         var point=new BMap.Point(lng,lat);
         var marker=new BMap.Marker(point);
         marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
